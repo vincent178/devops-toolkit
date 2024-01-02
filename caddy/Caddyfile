@@ -1,13 +1,12 @@
 :80 {
-	root * /usr/share/caddy
-	file_server
-
-	reverse_proxy localhost:3000
+	root * /usr/share/caddy/public
 
 	encode gzip
-    log
 
 	handle /assets/* {
-		header Cache-Control max-age=36000000
+		file_server
+		header Cache-Control max-age=315360000
 	}
+
+	reverse_proxy localhost:3000
 }
