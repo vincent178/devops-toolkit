@@ -1,0 +1,8 @@
+:80 {
+        root * /usr/share/caddy/public
+        file_server
+        route {
+            header           Cache-Control max-age=3600
+            header /assets/* Cache-Control max-age=36000
+        }
+}
