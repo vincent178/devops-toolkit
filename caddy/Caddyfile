@@ -8,5 +8,10 @@
 		header Cache-Control max-age=315360000
 	}
 
+	handle /assets/demo.txt {
+		file_server
+		header Cache-Control max-age=123
+	}
+
 	reverse_proxy localhost:3000
 }
